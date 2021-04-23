@@ -2,8 +2,8 @@ import { Entity, PrimaryColumn, CreateDateColumn, Column, ManyToOne, JoinColumn}
 import { v4 as uuid } from "uuid";
 import { User } from "./users";
 
-@Entity("message")
-class Message {
+@Entity("messages")
+class Messages {
 
     @PrimaryColumn()
     id: string;
@@ -32,4 +32,4 @@ class Message {
 
 }
 
-export {Message};
+export {Messages};
