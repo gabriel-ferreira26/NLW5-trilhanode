@@ -32,7 +32,7 @@ class MessageService{
 
         const list = await this.messagesRepository.find({
             where: {user_id},
-            relations: ["User"]
+            relations: ["user"]
         });
 
         return list;

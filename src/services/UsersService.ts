@@ -1,11 +1,12 @@
-import { Repository } from "typeorm"
+import { getCustomRepository, Repository } from "typeorm"
 import { User } from "../entities/users";
-
-
-
-
+import { UsersRepository} from "../repositories/UsersRepository"
 class UsersService{
     private usersRepository: Repository<User>
+    constructor() {
+        this.usersRepository = getCustomRepository(UsersRepository);
+    }
+
     async create(email: string) {
         
 
@@ -29,3 +30,7 @@ class UsersService{
 }
 
 export { UsersService }
+
+function UserRepository(UserRepository: any): Repository<User> {
+    throw new Error("Function not implemented.");
+}
